@@ -11,24 +11,67 @@
     <title>SA - Tela de Vendas</title>
 </head>
 <body>
-    <section name="telaVenda" class="col-lg-8">
-        <header class="page-header">
-            <h1>Vendas</h1>
-        </header>
-        <div class="form-group">
-            <label for="loja">Loja</label>
-            <input class="form-control" type="text" placeholder="[codLoja] Loja" readonly>
+    <section name="wrapVenda" class="d-flex justify-content-center">
+        <div name="telaVenda" class="col-lg-8">
+            <header class="jumbotron">
+                <h1 class="display-3">Vendas</h1>
+                <div class="text-right">
+                    <!-- COLOCAR AJUDA NOS CAMPOS VIA BOOTSTRAP CASO DÊ TEMPO -->
+                    <a class="btn btn-outline-primary btn-sm" href="#" role="button">Ajuda</a>
+                </div>
+            </header>
+            <div class="form-group">
+                <h4>Loja</h4>
+                <input class="form-control" type="text" placeholder="[codLoja] Loja" name="loja" readonly>
+            </div>
+            <div class="form-group">
+                <h4>Vendedor</h4>
+                <input class="form-control" type="text" placeholder="[codVendedor] Vendedor" name="vendedor" readonly>
+                <small id="vendedorHelp" class="text-muted">Verifique se está logado na sua conta antes de realizar a venda!</small>
+            </div>
+            <form class="form-group" id="formProdutos">
+                <h4>Produtos</h4>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Digite o código ou o nome do produto">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-primary" type="button" id="vendaAdicionar">Adicionar</button>
+                    </div>
+                </div>
+            </form>
+            <table class="table" id="listaProdutos">
+            <!-- COLOCAR UMA LISTA COM JQUERY DOS PRODUTOS ADICIONADOS, QUANTIDADE, ETC. -->
+                <h5>Lista de Produtos</h5>
+                <div class="text-right">
+                    <!-- ATUALIZAR O TOTAL A PARTIR DA LISTA DINÂMICA -->
+                    <h6>Total:</h6>
+                </div>
+            </table>
+            <form class="form-group" id="formClientes">
+                <h4>Cliente</h4>
+                <div class="form-group" id="clienteCheck">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="clienteFormCheck" value="option1" id="radio1" checked>
+                        <label class="form-check-label" for="radio1">Cadastrado</label>
+                    </div>
+                    <div class="form-check">
+                        <!-- LEMBRAR DE COLOCAR FUNÇÃO PARA ESCONDER CAMPO PROCURAR CLIENTE QUANDO SEM CADASTRO FOR ESCOLHIDO -->
+                        <input class="form-check-input" type="radio" name="clienteFormCheck" value="option2" id="radio2">
+                        <label class="form-check-label" for="radio2">Sem cadastro</label>
+                    </div>
+                </div>
+                <div class="input-group" id="procurarCliente">
+                    <input type="text" class="form-control" placeholder="Procurar cliente">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-primary" type="button" id="clienteAdicionar">Adicionar</button>
+                    </div>
+                </div>
+            </form>
+            </br>
+            <form class="form-group" id="formFinalizar">
+                <div class="text-right">
+                    <a class="btn btn-success btn-lg" href="#" role="button">Finalizar Venda</a>
+            </form>
             
-        </div>
-        <div id="form-group">
-            <label for="vendedor">Vendedor</label>
-            <input class="form-control" type="text" placeholder="[codVendedor] Vendedor" readonly>
-            <small id="vendedorHelp" class="form-text text-muted">Verifique que está logado na sua conta antes de realizar a venda!</small>
-        </div>
-        <div id="form-group">
-        Produtos:
-        </div>
-        Cliente:
         </div>
     </section>
 </body>
